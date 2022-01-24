@@ -101,7 +101,7 @@ func set_user_values_internal{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, 
     # If length is NOT zero, then the function calls itself again, moving forward one slot
     set_user_values_internal(account = account, length=length - 1, array=array + 1)
 
-    # This part of the function is first reached when length=0.
+    # This part of the function is first reached when length=1.
     user_values_storage.write(account, length - 1, [array])
     return ()
 end
